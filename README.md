@@ -17,4 +17,4 @@ TinyTapeout is an educational project that aims to make it easier and cheaper th
 Go to https://tinytapeout.com for instructions!
 
 ## Thanks
-Not possible without Matt and Adam Greig, super Amaranth Tiny tapeputs projects
+Not possible without Matt Venn and Adam Greig, Amaranth constructs for TT based on Adam super Projects

@@ -5,12 +5,6 @@ project:
     - gray_ctr6.v
   top_module:  "tucanae47_gray_ctr6"
 
-# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
-# it does and how to operate it.
-#
-# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
-#
-# This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
   author:       "Camilo Soto"      
   discord:      "tucanae47#6105" 
@@ -21,7 +15,7 @@ documentation:
     is an ordering of the binary numeral system such that two successive values differ in only one bit (binary digit).
     For example, the representation of the decimal value "1" in binary would normally be "001" and "2" would be "010". 
     In Gray code, these values are represented as "001" and "011". That way, incrementing a value from 1 to 2 requires
-    only one bit to change, instead of two (Wikipedia)
+    only one bit to change, instead of two (Wikipedia https://en.wikipedia.org/wiki/Gray_code)
   how_to_test:  "Apply clk to the in[0], rst on in[1]"      
   external_hw:  ""     
   language:     "Amaranth" 

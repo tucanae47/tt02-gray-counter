@@ -1,4 +1,5 @@
 from amaranth import *
+# import amaranth as am
 from amaranth.cli import main
 
 
@@ -13,8 +14,20 @@ class Top(Elaboratable):
 
     def elaborate(self, platform):
         m = Module()
-        m.d.sync += self.io_in.eq(self.io_in + 1)
-        m.d.sync += self.io_out.eq(Cat(self.io_in[1:] ^ self.io_in[:7], self.io_in[-1]))
+        clk_in = self.io_in[0]
+        rst_in = self.io_in[1]
+        q = Signal(6)
+        o = Signal(6)
+        # Set up clock domain from io_in[0] and reset from io_in[1].
+        cd_sync = ClockDomain("sync")
+        m.d.comb += cd_sync.clk.eq(clk_in)
+        m.d.comb += cd_sync.rst.eq(rst_in)
+        m.domains += cd_sync
+        
+        m.d.sync += q.eq(self.io_in[2:])
+        m.d.sync += q.eq(q + 1)
+        m.d.sync += o.eq(Cat(q[1:] ^ q[:5], q[-1]))
+        m.d.comb += self.io_out.eq(o)
         return m
 
     def ports(self):
@@ -50,8 +63,8 @@ def test():
 
 if __name__ == "__main__":
     # Generate Verilog source for GC4.
-    ctr = Top()
+    top = Top()
     v = verilog.convert(
-        ctr, name="tuc47_grayctr", ports=[ctr.io_out, ctr.io_in],
+        top, name="tucanae47_gray_ctr6", ports=[top.io_out, top.io_in],
         emit_src=False, strip_internal_attrs=True)
     print(v)

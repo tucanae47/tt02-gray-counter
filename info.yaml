@@ -1,7 +1,8 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id: 0
+  wokwi_id: 0  
+  source_files:
     - gray_ctr6.v
   top_module:  "tucanae47_gray_ctr6"
 

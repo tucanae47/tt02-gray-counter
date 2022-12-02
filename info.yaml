@@ -17,11 +17,11 @@ documentation:
     In Gray code, these values are represented as "001" and "011". That way, incrementing a value from 1 to 2 requires
     only one bit to change, instead of two (Wikipedia https://en.wikipedia.org/wiki/Gray_code)
   how_to_test:  "Apply clk to the in[0], rst on in[1]"      
-  external_hw:  ""     
+  external_hw:  "None"     
   language:     "Amaranth" 
   doc_link:     "https://github.com/tucanae47/tt02-gray-counter"   
   clock_hz:     3000    
-  picture:      "" 
+  picture:      "None" 
   inputs:  
     - clock
     - reset

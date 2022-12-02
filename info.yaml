@@ -1,7 +1,7 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  wokwi_id:    0 
     - gray_ctr6.v
   top_module:  "tucanae47_gray_ctr6"
 
